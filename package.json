@@ -1,0 +1,19 @@
+{
+  "scripts": {
+    "test": "jest"
+  },
+  "name": "imyourpuppet",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/GossJS/imyourpuppet.git",
+  "author": "gossoudarev <igossoudarev@herzen.spb.ru>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-jest": "^21.2.0",
+    "babel-preset-env": "^1.6.1",
+    "faker": "^4.1.0",
+    "jest": "^21.2.1",
+    "puppeteer": "^0.13.0"
+  }
+}

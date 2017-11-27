@@ -1,10 +1,6 @@
 # imyourpuppet
 the Jest and the one puppeteer
 
-Туториал:
+Что именно нужно исправить, чтобы заработало.
 
-https://kodaktor.ru/g/puppetform.man
-
-Страница с формой для тестирования:
-
-https://kodaktor.ru/g/puppetform
+**Дополнительное задание**: добавить проверку изменения надписи на кнопке submit после щелчка.

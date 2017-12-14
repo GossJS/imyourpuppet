@@ -9,6 +9,9 @@ request+jsdom работает для любого серверного сцен
 с помощью этого сценария демонстрируется простая автоматизированная проверка
 выполнения
 
+https://github.com/GossJS/imyourpuppet/tree/z1-z4
+https://github.com/GossJS/php_starters1/blob/step0/README.md
+
 
 */
 

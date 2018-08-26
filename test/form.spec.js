@@ -1,43 +1,38 @@
-import faker from 'faker';
-import puppeteer from 'puppeteer';
-const APP = 'https://kodaktor.ru/g/puppetform';
-const lead = {
-  name: faker.name.firstName(),
-  email: faker.internet.email(),
-  phone: faker.phone.phoneNumber(),
-  message: faker.random.words()
-};
+const should = require('should');
+const puppeteer = require('puppeteer');
 let page;
 let browser;
-const width = 1920;
-const height = 1080;
-beforeAll(async () => {
+const width = 800;
+const height = 600;
+before(async () => {
   browser = await puppeteer.launch({
+	waitUntil: 'domcontentloaded',
     headless: false,
-    slowMo: 80,
-    args: [`--window-size=${width},${height}`]
+    slowMo: 30,  
+	devtools: false,  
+    args: [`--window-size=${width},${height}`, `--window-position=30,160`] 
   });
   page = await browser.newPage();
   await page.setViewport({ width, height });
 });
-afterAll(() => {
-  browser.close();
-});
 
-describe('Contact form', () => {
-  test('lead can submit a contact request', async () => {
+after(async () => { await browser.close(); }); // в демонстрационных целях закомментить чтобы окно осталось
 
-    await page.waitForSelector('[data-test=contact-form]');
-    await page.click('input[name=name]');
-    await page.type('input[name=name]', lead.name);
-    await page.click('input[name=email]');
-    await page.type('input[name=email]', lead.email);
-    await page.click('input[name=tel]');
-    await page.type('input[name=tel]', lead.phone);
-    await page.click('textarea[name=message]');
-    await page.type('textarea[name=message]', lead.message);
-    await page.click('input[type=checkbox]');
-    await page.click('button[type=submit]');
-    await page.waitForSelector('.modal');
-  }, 16000);
-});
+const cases = [
+    {s: 'abc', xs: 'CBA'}, 
+    {s: 'zyx', xs: 'XYZ'},
+];
+
+const URL = 'https://kodaktor.ru/g/autocase';        
+     
+cases.forEach(({ s, xs }) =>
+    describe(xs + ' asyncREV()', () => {
+      it('respond with revers', async () => {
+        await page.goto(URL);  
+        page.evaluate(s => document.querySelector('#inp').value = s, s);
+
+        await page.$eval('#button_do', el => el.click());
+        (await page.$eval('#ans', el => el.value)).should.equal(xs);
+      }).timeout(0);
+    })
+);

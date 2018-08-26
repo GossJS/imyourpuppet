@@ -1,5 +1,5 @@
 # imyourpuppet
-the Jest and the one puppeteer
+Mocha and the puppeteer
 
 Интерфейс Puppeteer меняется, поэтому нужно следить за информацией от разработчика в случае желания использовать этот инструмент.
 

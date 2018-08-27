@@ -5,10 +5,10 @@ let browser;
 const [ width, height] = [600, 350];
 before(async () => {
   browser = await puppeteer.launch({
-	  waitUntil: 'domcontentloaded',
+    waitUntil: 'domcontentloaded',
     headless: false,
     slowMo: 30,
-	  devtools: false,
+    devtools: false,
     args: [`--window-size=${width},${height}`, `--window-position=30,160`]
   });
   page = await browser.newPage();

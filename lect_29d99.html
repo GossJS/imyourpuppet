@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>JavaScript</title><meta charset="utf-8">
+ </head>
+ <body>
+    <script src="/j/out"></script>
+    <script src="/j/dblttl"></script><script src="/j/clicker"></script>
+   <script>{ try { console.clear(); } catch(e){}; 
+new Clicker(async () => {
+  const r = await fetch('https://kodaktor.ru/x/unsafe_20229');
+  const res = await r.text();
+  const p = new DOMParser();
+  const xml = p.parseFromString(res, 'text/xml');
+  const result = xml.querySelectorAll('login')[3].textContent;           
+             
+  Out.log(result);   
+  top.document.title = result;           
+             
+}, caption='Щёлкни');      
+  
+    }</script>
+ </body>
+</html>

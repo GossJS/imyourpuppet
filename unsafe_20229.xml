@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE users PUBLIC "GossJS" "http://kodaktor.ru/x/unsafe_f7486" >
+<users>
+  <login password="tneduts">student@mail.com</login>
+  <login password="mypas">myuserlogin@my.spb.ru</login>
+  <login password="fessor">prof@univer.msk.ru</login>
+  <login password="selfish">ego@yandex.ru</login>  
+</users> 

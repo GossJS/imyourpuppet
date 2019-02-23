@@ -1,0 +1,8 @@
+{
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^1.8.0",
+    "xmldoc": "^1.1.2"
+  }
+}
